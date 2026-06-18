@@ -1,0 +1,72 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-nexora-bg: #050505;
+  --color-nexora-blue: #00aeef;
+  --font-sans: 'Inter', 'Tajawal', system-ui, sans-serif;
+  --font-brand: 'Space Grotesk', system-ui, sans-serif;
+  --font-logo: 'Orbitron', 'Space Grotesk', system-ui, sans-serif;
+}
+
+@layer utilities {
+  .font-brand {
+    font-family: var(--font-brand);
+  }
+
+  .font-logo {
+    font-family: var(--font-logo);
+  }
+
+  .nexora-emblem {
+    mix-blend-mode: lighten;
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background-color: #050505;
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  #root {
+    min-height: 100vh;
+  }
+
+  ::selection {
+    background-color: rgba(0, 174, 239, 0.3);
+    color: #ffffff;
+  }
+}
+
+@layer utilities {
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+  }
+
+  .focus\:not-sr-only:focus {
+    position: static;
+    width: auto;
+    height: auto;
+    padding: inherit;
+    margin: inherit;
+    overflow: visible;
+    clip: auto;
+    white-space: normal;
+  }
+}
